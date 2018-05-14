@@ -1,6 +1,6 @@
 class Example
 {
-    static def simpleMethod()
+    static void simpleMethod()
     {
         println("Hello, World")
 
@@ -8,13 +8,10 @@ class Example
         int a = 5
         int A = 3
         String b = '\nThe result of ' + a + '%' + A + ' equals ' + a%3
-        println(b)
+        println("$b\n")
 
-        //defines a range from -1 to 10
+        //defines a range from -1 to 10 and prints it
         def range = -10..10
-
-        //method to print range
-        print("\n")
         for(int i = 0; i < range.size(); i++)
         {
             print("${range.get(i)} ")
