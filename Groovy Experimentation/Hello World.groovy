@@ -47,7 +47,8 @@ class Example
                 simpleGstringMethod(i, j)
             }
         }
-            
+        
+        printFromFile();
     }
 
     //can return typeless 'def'
@@ -68,6 +69,14 @@ class Example
     static void simpleGstringMethod(int a, int b)
     {
         println("The summation of $a and $b is ${a+b}")
+    }
+
+    static void printFromFile()
+    {
+        new File("Groovy Experimentation\\darthPlagueis.txt").eachLine
+        {
+            String line -> println("\n$line");
+        }
     }
 
     //main method
