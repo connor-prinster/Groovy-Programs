@@ -15,7 +15,25 @@ class Example
         System.out.println(range)
 
         for(int i = 0; i < range.size(); i++)
+        {
             System.out.println(range.get(i))
+        }
+
+        for(int i = 0; i < 2; i++)
+        {
+            for(int j = 0; j < 2; j++)
+            {
+                simpleMethodWithParameters(i, j)
+            }
+        }
+            
+    }
+
+    static def simpleMethodWithParameters(int a, int b)
+    {
+        int summation = a+b
+        String dataToPrint = "The summation of " + a + " + " + b + " = " + summation
+        System.out.println(dataToPrint);
     }
 
     static void main(String[] args)
