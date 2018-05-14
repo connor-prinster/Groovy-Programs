@@ -2,6 +2,7 @@ class Example
 {
     static void simpleMethod()
     {
+        def filename = "Groovy Experimentation\\darthPlagueis.txt"
         println("Hello, World")
 
         //just a simple println function, like the most simple one I could think of
@@ -48,7 +49,7 @@ class Example
             }
         }
         
-        printFromFileLineByLine();
+        printFromFileLineByLine(filename);
     }
 
     //can return typeless 'def'
@@ -72,10 +73,11 @@ class Example
     }
 
     //prints each individual line
-    static void printFromFileLineByLine()
+    static void printFromFileLineByLine(String filename)
     {
-        println("\n---PRINTING EACH LINE SEPARATELY---")
-        new File("Groovy Experimentation\\darthPlagueis.txt").eachLine
+        println("\nfilename to print from is \"$filename\"")
+        println("---PRINTING EACH LINE SEPARATELY---")
+        new File(filename).eachLine
         {
             String line -> println("$line");
         }
