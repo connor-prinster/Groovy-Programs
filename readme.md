@@ -50,3 +50,29 @@ for( String myObj in myList )
 * you can have nested switch statements as well as nested if statements
 * methods are the same in Groovy as in Java, can take 0 or infinity amount of parameters
 * can have a method return any type including the typeless 'def'
+* can have global variables in classes that can be accessed from any method just like java
+* GStrings are designated by quotation marks while normal strings are designated by apostrophes (e.g. "Hello, World" is a gstring while 'Hello World' is a simple string);
+* GStrings have a cool idea where you can have a variable inside of the gstring without having to concatonate like in LaTeX. It could look like:
+```Groovy
+for(int i = 0; i < 2; i++)
+{
+  for(int j = 0; j < 2; j++)
+  {
+    simpleGstringMethod(i, j)
+  }
+}
+
+static void simpleGstringMethod(int a, int b)
+{
+  System.out.println("The summation of $a and $b is ${a+b}")
+}
+
+/*
+the above would print:
+The summation of 0 and 0 is 0
+The summation of 0 and 1 is 1
+The summation of 1 and 0 is 1
+The summation of 1 and 1 is 2
+*/
+```
+&nbsp; &nbsp; &nbsp; &nbsp; It's actually pretty cool and makes life a lot simpler. It's just simpler, honestly.

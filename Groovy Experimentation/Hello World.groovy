@@ -36,6 +36,16 @@ class Example
                 System.out.println("The summation of " + j + " + " + i + " = " + simpleIntMethod(i, j));
             }
         }
+
+        System.out.println("\nPrinting from simpleGstringMethod
+    ");
+        for(int i = 0; i < 2; i++)
+        {
+            for(int j = 0; j < 2; j++)
+            {
+                simpleGstringMethod(i, j)
+            }
+        }
             
     }
 
@@ -51,6 +61,11 @@ class Example
     static int simpleIntMethod(int a, int b)
     {
         return a + b;
+    }
+
+    static void simpleGstringMethod(int a, int b)
+    {
+        System.out.println("The summation of $a and $b is ${a+b}")
     }
 
     static void main(String[] args)
