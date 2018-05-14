@@ -74,12 +74,12 @@ class Example
     //prints each individual line
     static void printFromFileLineByLine()
     {
-        println("\nPrinting each line of the text file separately\n")
+        println("\n---PRINTING EACH LINE SEPARATELY---")
         new File("Groovy Experimentation\\darthPlagueis.txt").eachLine
         {
             String line -> println("$line");
         }
-        print("\nDONE PRINTING EACH LINE\n")
+        print("---DONE PRINTING EACH LINE---\n")
     }
 
     //main method
