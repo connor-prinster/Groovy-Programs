@@ -1,12 +1,25 @@
-System.out.println("Hello, World")
+class Example
+{
+    static def simpleMethod()
+    {
+        System.out.println("I made it inside the method!")
 
-def a = 5;
-def A = 3;
-String b = 'The result of ' + a + '%' + A + ' equals ' + a%3;
-System.out.println(b)
+        System.out.println("Hello, World")
 
-def range = 5..10
-System.out.println(range)
+        def a = 5;
+        def A = 3;
+        String b = 'The result of ' + a + '%' + A + ' equals ' + a%3;
+        System.out.println(b)
 
-for(int i = 0; i < range.size(); i++)
-    System.out.println(range.get(i))
+        def range = 5..10
+        System.out.println(range)
+
+        for(int i = 0; i < range.size(); i++)
+            System.out.println(range.get(i))
+    }
+
+    static void main(String[] args)
+    {
+        simpleMethod();
+    }
+}
