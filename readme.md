@@ -14,7 +14,7 @@ One of my new favorite things is the "Code Runner" extension, it allows it to ru
 * if you have a method it must be contained in a class
 * classes and methods are pretty much the same as in Java as far as I can tell
 * there are while, for, and for-in statements, example below
-```groovy
+```java
 class Example { 
    static void main(String[] args) { 
       int[] array = [0,1,2,3]; 
@@ -26,7 +26,7 @@ class Example {
 }
 ```
 the for-in loop can also look like this which will say something along the lines of Ken = 21 \n Jon = 25 \n Sally = 22 which is pretty lit. It's apparently called a map?
-```groovy
+```java
 class Example {
    static void main(String[] args) {
       def employee = ["Ken" : 21, "John" : 25, "Sally" : 22];
@@ -40,7 +40,7 @@ class Example {
 
 * if and if/else statements are the exact same as in Java and C++ and Javascript
 * there is something called a continue statement which is the opposite of the break command
-```groovy
+```java
 for( String myObj in myList )
 {
   if( something ) continue
@@ -53,7 +53,7 @@ for( String myObj in myList )
 * can have global variables in classes that can be accessed from any method just like java
 * GStrings are designated by quotation marks while normal strings are designated by apostrophes (e.g. "Hello, World" is a gstring while 'Hello World' is a simple string);
 * GStrings have a cool idea where you can have a variable inside of the gstring without having to concatonate like in LaTeX. It could look like:
-```Groovy
+```java
 for(int i = 0; i < 2; i++)
 {
   for(int j = 0; j < 2; j++)
@@ -76,3 +76,14 @@ The summation of 1 and 1 is 2
 */
 ```
 &nbsp; &nbsp; &nbsp; &nbsp; It's actually pretty cool and makes life a lot simpler. It's just simpler, honestly.
+
+* I really have no idea how to get some of this file working without some experimentation. The biggest issue I've found is finding the correct path to a file. This is one example of how to read from a file:
+```Java
+static void printFromFile()
+{
+    new File("[parent directory]\\*.txt").eachLine
+    {
+        String line -> println("\n$line");
+    }
+}
+```
