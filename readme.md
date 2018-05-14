@@ -1,5 +1,6 @@
 # Groovy Notes:
 
+---
 ## General Data I've Found:
 [Sorry about the mess](https://www.sideshowtoy.com/wp-content/uploads/2014/07/hansolo.jpg) the notes will eventually be clean
 
