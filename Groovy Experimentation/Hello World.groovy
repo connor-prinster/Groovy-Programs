@@ -2,12 +2,12 @@ class Example
 {
     static def simpleMethod()
     {
-        System.out.println("Hello, World" as Object)
+        System.out.println("Hello, World")
 
         int a = 5
         int A = 3
         String b = '\nThe result of ' + a + '%' + A + ' equals ' + a%3
-        System.out.println(b as Object)
+        System.out.println(b)
 
         //defines a range from -1 to 10
         def range = -10..10
@@ -19,7 +19,7 @@ class Example
         }
         print("\n")
 
-        System.out.println("\nPrinting from simpleMethodWithParameters" as Object)
+        System.out.println("\nPrinting from simpleMethodWithParameters")
         for(int i = 0; i < 2; i++)
         {
             for(int j = 0; j < 2; j++)
@@ -28,16 +28,16 @@ class Example
             }
         }
 
-        System.out.println("\nPrinting from simpleIntMethod" as Object)
+        System.out.println("\nPrinting from simpleIntMethod")
         for(int i = 0; i < 2; i++)
         {
             for(int j = 0; j < 2; j++)
             {
-                System.out.println("The summation of " + j + " + " + i + " = " + simpleIntMethod(i, j) as Object)
+                System.out.println("The summation of " + j + " + " + i + " = " + simpleIntMethod(i, j))
             }
         }
 
-        System.out.println("\nPrinting from simpleGstringMethod " as Object)
+        System.out.println("\nPrinting from simpleGstringMethod ")
         for(int i = 0; i < 2; i++)
         {
             for(int j = 0; j < 2; j++)
@@ -53,7 +53,7 @@ class Example
     {
         int summation = a+b
         String dataToPrint = "The summation of " + a + " + " + b + " = " + summation
-        System.out.println(dataToPrint as Object)
+        System.out.println(dataToPrint)
     }
 
     //can return int
@@ -64,7 +64,7 @@ class Example
 
     static void simpleGstringMethod(int a, int b)
     {
-        System.out.println("The summation of $a and $b is ${a+b}" as Object)
+        System.out.println("The summation of $a and $b is ${a+b}")
     }
 
     static void main(String[] args)
