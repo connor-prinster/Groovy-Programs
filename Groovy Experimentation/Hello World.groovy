@@ -2,22 +2,22 @@ class Example
 {
     static def simpleMethod()
     {
-        println("I made it inside the method!" as Object)
-
         System.out.println("Hello, World" as Object)
 
         int a = 5
         int A = 3
-        String b = 'The result of ' + a + '%' + A + ' equals ' + a%3
+        String b = '\nThe result of ' + a + '%' + A + ' equals ' + a%3
         System.out.println(b as Object)
 
-        def range = 5..10
-        System.out.println(range as Object)
+        //defines a range from -1 to 10
+        def range = -10..10
 
+        print("\n")
         for(int i = 0; i < range.size(); i++)
         {
-            System.out.println(range.get(i))
+            System.out.print("${range.get(i)} ")
         }
+        print("\n")
 
         System.out.println("\nPrinting from simpleMethodWithParameters" as Object)
         for(int i = 0; i < 2; i++)
