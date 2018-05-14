@@ -49,3 +49,4 @@ for( String myObj in myList )
 ```
 * you can have nested switch statements as well as nested if statements
 * methods are the same in Groovy as in Java, can take 0 or infinity amount of parameters
+* can have a method return any type including the typeless 'def'
