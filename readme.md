@@ -1,4 +1,7 @@
 # Groovy Notes:
+[Sorry about the mess](https://www.sideshowtoy.com/wp-content/uploads/2014/07/hansolo.jpg) the notes will eventually be clean
+
+#### One of my new favorite things is the "Code Runner" extension, it allows it to run on VS Code which is great
 * for loops have the same syntax
 * do not need semicolons but so help me I'm going to anyways
 * if you have a method it must be contained in a class
@@ -37,3 +40,4 @@ for( String myObj in myList )
   doTheRest()
 }
 ```
+* you can have nested switch statements as well as nested if statements
