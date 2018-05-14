@@ -48,7 +48,7 @@ class Example
             }
         }
         
-        printFromFile();
+        printFromFileLineByLine();
     }
 
     //can return typeless 'def'
@@ -68,15 +68,18 @@ class Example
     //prints a GString
     static void simpleGstringMethod(int a, int b)
     {
-        println("The summation of $a and $b is ${a+b}")
+        print("The summation of $a and $b is ${a+b}\n")
     }
 
-    static void printFromFile()
+    //prints each individual line
+    static void printFromFileLineByLine()
     {
+        println("\nPrinting each line of the text file separately\n")
         new File("Groovy Experimentation\\darthPlagueis.txt").eachLine
         {
-            String line -> println("\n$line");
+            String line -> println("$line");
         }
+        print("\nDONE PRINTING EACH LINE\n")
     }
 
     //main method
