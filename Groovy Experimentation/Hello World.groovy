@@ -2,24 +2,27 @@ class Example
 {
     static def simpleMethod()
     {
-        System.out.println("Hello, World")
+        println("Hello, World")
 
+        //just a simple println function, like the most simple one I could think of
         int a = 5
         int A = 3
         String b = '\nThe result of ' + a + '%' + A + ' equals ' + a%3
-        System.out.println(b)
+        println(b)
 
         //defines a range from -1 to 10
         def range = -10..10
 
+        //method to print range
         print("\n")
         for(int i = 0; i < range.size(); i++)
         {
-            System.out.print("${range.get(i)} ")
+            print("${range.get(i)} ")
         }
         print("\n")
 
-        System.out.println("\nPrinting from simpleMethodWithParameters")
+        //prints from a void function
+        println("\nPrinting from simpleMethodWithParameters")
         for(int i = 0; i < 2; i++)
         {
             for(int j = 0; j < 2; j++)
@@ -28,16 +31,18 @@ class Example
             }
         }
 
-        System.out.println("\nPrinting from simpleIntMethod")
+        //prints output from a method
+        println("\nPrinting from simpleIntMethod")
         for(int i = 0; i < 2; i++)
         {
             for(int j = 0; j < 2; j++)
             {
-                System.out.println("The summation of " + j + " + " + i + " = " + simpleIntMethod(i, j))
+                println("The summation of " + j + " + " + i + " = " + simpleIntMethod(i, j))
             }
         }
 
-        System.out.println("\nPrinting from simpleGstringMethod ")
+        //prints method dealing with a Gstring
+        println("\nPrinting from simpleGstringMethod ")
         for(int i = 0; i < 2; i++)
         {
             for(int j = 0; j < 2; j++)
@@ -53,7 +58,7 @@ class Example
     {
         int summation = a+b
         String dataToPrint = "The summation of " + a + " + " + b + " = " + summation
-        System.out.println(dataToPrint)
+        println(dataToPrint)
     }
 
     //can return int
@@ -62,11 +67,13 @@ class Example
         return a + b
     }
 
+    //prints a GString
     static void simpleGstringMethod(int a, int b)
     {
-        System.out.println("The summation of $a and $b is ${a+b}")
+        println("The summation of $a and $b is ${a+b}")
     }
 
+    //main method
     static void main(String[] args)
     {
         simpleMethod()
