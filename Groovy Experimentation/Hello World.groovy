@@ -2,7 +2,8 @@ class Example
 {
     static void simpleMethod()
     {
-        def filename = "darthPlagueis.txt"
+        def darthPlagueisText = "Groovy Experimentation\\darthPlagueis.txt"
+        def fileToWrite = "fileToWriteTo.txt"
         println("Hello, World")
 
         //just a simple println function, like the most simple one I could think of
@@ -49,8 +50,9 @@ class Example
             }
         }
         
-        printFromFileLineByLine(filename);
-        printFileAsString(filename);
+        printFromFileLineByLine(darthPlagueisText)
+        printFileAsString(darthPlagueisText)
+        printStringToFile(fileToWrite)
     }
 
     //can return typeless 'def'
@@ -74,24 +76,35 @@ class Example
     }
 
     //prints each individual line
-    static void printFromFileLineByLine(String filename)
+    static void printFromFileLineByLine(String darthPlagueisText)
     {
-        println("\nfilename to print from is \"$filename\"")
+        println("\nfilename to print from is \"$darthPlagueisText\"")
         println("---PRINTING EACH LINE SEPARATELY---")
-        new File(filename).eachLine
+        new File(darthPlagueisText).eachLine
         {
             String line -> println("$line");
         }
         print("---DONE PRINTING EACH LINE---\n")
     }
 
-    static void printFileAsString(String filename)
+    static void printFileAsString(String darthPlagueisText)
     {
-        println("\nfilename to print from is \"$filename\"")
+        println("\nfilename to print from is \"$darthPlagueisText\"")
         println("---PRINTING FILE AS A STRING---")
-        File file = new File(filename)
+        File file = new File(darthPlagueisText)
         println(file.text);
         print("---DONE PRINTING STRING---\n")
+    }
+
+    static void printStringToFile(fileToWriteTo)
+    {
+        println "\nfilename to print to is \"$fileToWriteTo\""
+        println "---ATTEMPTING TO PRINT TO FILE---"
+        new File(fileToWriteTo).withWriter('utf-8')
+        {
+            writer -> writer.writeLine "Don't get cocky, kid"
+        }
+        println "---SUCCESSFULLY PRINTED---\n"
     }
 
     //main method
