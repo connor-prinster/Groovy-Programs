@@ -50,6 +50,7 @@ class Example
         }
         
         printFromFileLineByLine(filename);
+        printFileAsString(filename);
     }
 
     //can return typeless 'def'
@@ -82,6 +83,15 @@ class Example
             String line -> println("$line");
         }
         print("---DONE PRINTING EACH LINE---\n")
+    }
+
+    static void printFileAsString(String filename)
+    {
+        println("\nfilename to print from is \"$filename\"")
+        println("---PRINTING FILE AS A STRING---")
+        File file = new File(filename)
+        println(file.text);
+        print("---DONE PRINTING STRING---\n")
     }
 
     //main method
