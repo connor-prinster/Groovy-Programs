@@ -52,7 +52,13 @@ class Example
         
         printFromFileLineByLine(darthPlagueisText)
         printFileAsString(darthPlagueisText)
-        printStringToFile(fileToWrite)
+
+        println "\n---Attempting to print to and check size of $fileToWrite---"
+        
+        printStringCheckSizeFile(fileToWrite)
+        
+        
+(fileToWrite)
     }
 
     //can return typeless 'def'
@@ -96,15 +102,13 @@ class Example
         print("---DONE PRINTING STRING---\n")
     }
 
-    static void printStringToFile(fileToWriteTo)
+    static void printStringCheckSizeFile(String fileToWrite)
     {
-        println "\nfilename to print to is \"$fileToWriteTo\""
-        println "---ATTEMPTING TO PRINT TO FILE---"
-        new File(fileToWriteTo).withWriter('utf-8')
+        File file = new File(fileToWrite).withWriter('utf-8')
         {
-            writer -> writer.writeLine "Don't get cocky, kid"
+            writer -> writer.writeLine "This string is useless\n"
         }
-        println "---SUCCESSFULLY PRINTED---\n"
+        println "The file $fileToWrite has ${fileToWrite.length()} bytes\n"
     }
 
     //main method
