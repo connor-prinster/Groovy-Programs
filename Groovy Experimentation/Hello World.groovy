@@ -2,7 +2,7 @@ class Example
 {
     static void simpleMethod()
     {
-        def filename = "Groovy Experimentation\\darthPlagueis.txt"
+        def filename = "darthPlagueis.txt"
         println("Hello, World")
 
         //just a simple println function, like the most simple one I could think of
