@@ -236,7 +236,7 @@ println(sample[-1]); /*Print the 1st character in the string starting from the b
 println(sample[1..2]);/*Prints a string starting from Index 1 to 2 (remember that the x..y means it defines a Range from x to y*/
 println(sample[4..2]);/*Prints a string starting from Index 4 back to 2*/
 ```
-&nbsp; &nbsp; &nbsp;will print
+&nbsp; &nbsp; &nbsp; will print
 ```
 o 
 d
