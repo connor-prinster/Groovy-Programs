@@ -1,12 +1,15 @@
 # Groovy Notes:
 
 ---
-## General Data I've Found:
+---
+## General Not-Notes:
 [Sorry about the mess](https://www.sideshowtoy.com/wp-content/uploads/2014/07/hansolo.jpg) the notes will eventually be clean
 
 One of my new favorite things is the "Code Runner" extension, it allows it to run on VS Code which is great
 
-----
+---
+---
+
 ## General:
  * methods are the same in Groovy as in Java, can take 0 or infinity amount of parameters
 * can have a method return any type including the typeless 'def'
@@ -15,6 +18,17 @@ One of my new favorite things is the "Code Runner" extension, it allows it to ru
 * if you have a method it must be contained in a class
 * classes and methods are pretty much the same as in Java as far as I can tell
 * Groovy also automatically handles exceptions bassed on types it's working with. You also don't have to worry about null variables
+* just like in Java, all ints are objects of type Integer. _int x, int y_ will automatically **box** itself into _Integer x, Integer y_. An example of **unboxing** is _x + y_ which automatically unboxes the Integer objects into primitive ints
+* you can concatonate strings just like in Java
+* can use try/catch blocks
+* can use and define objects same as in Java
+
+Since Groovy is untyped, if you're going to use **def** make sure to use _duck typing_ as shown below
+```java
+def c = 100.10 /*this could lead to problems since you don't really know what type it is along the line*/
+def cFloat = 100.10 /*This is much better because when you're coding past the declaration of the variable you can remember what type it was originally supposed to be*/
+```
+
 
 To compile
 ```
@@ -47,6 +61,20 @@ println "Hello World"
  public HelloWorld(groovy.lang.Binding);
  public static void main(java.lang.String...);
  ```
+---
+---
+
+## If/Else Switch
+* if and if/else and switch statements are the exact same as in Java and C++ and Javascript
+
+There is something called a continue statement which is the opposite of the break command
+```java
+for( String myObj in myList )
+{
+  if( something ) continue
+  doTheRest()
+}
+```
 ---
 ---
 
@@ -97,8 +125,7 @@ while(isTrue)
 ---
 ---
 
-## Strings:
-### GStrings
+## GStrings
 * GStrings are designated by quotation marks while normal strings are designated by apostrophes (e.g. "Hello, World" is a gstring while 'Hello World' is a simple string);
 * GStrings have a cool idea where you can have a variable inside of the gstring without having to concatonate like in LaTeX. It could look like:
 ```java
@@ -123,6 +150,22 @@ The summation of 1 and 0 is 1
 The summation of 1 and 1 is 2
 */
 ```
+A String object in Groovy is pretty much the same as in C++ as far as I can tell. Just like you can access a specific char by doing *char c = oldString[x]*, the following code is totally valid
+```java
+String sample = "Hello world"; 
+println(sample[4]); // Print the fifth character in the string
+println(sample[-1]); /*Print the 1st character in the string starting from the back */
+println(sample[1..2]);/*Prints a string starting from Index 1 to 2 (remember that the x..y means it defines a Range from x to y*/
+println(sample[4..2]);/*Prints a string starting from Index 4 back to 2*/
+
+/*
+will print
+o 
+d
+el
+oll
+*/
+```
 
 ---
 ---
@@ -138,23 +181,6 @@ static void printFromFile()
     }
 }
 ```
-
----
----
-
-## Notes on the Language:
-* 
-
-* if and if/else statements are the exact same as in Java and C++ and Javascript
-* there is something called a continue statement which is the opposite of the break command
-```java
-for( String myObj in myList )
-{
-  if( something ) continue
-  doTheRest()
-}
-```
-
 
 * the **delete()** method for the File class returns a boolean. For example the below code is valid
 
@@ -200,7 +226,7 @@ dst << src.text //copies src to dst
 def rootFiles = new File("test").listRoots() 
 rootFiles.each { file -> println file.absolutePath }
 ```
-&nbsp; &nbsp; &nbsp;will print
+will print
 ```
 C:\ 
 D:\
@@ -219,57 +245,13 @@ new File("E:/Temp").eachFile()
 new File("E:/Temp").eachFileRecurse() 
 { file->println file.getAbsolutePath() }
 ```
-* since Groovy is untyped, if you're going to use **def** make sure to use _duck typing_ as shown below
-```java
-def c = 100.10 /*this could lead to problems since you don't really know what type it is along the line*/
-def cFloat = 100.10 /*This is much better because when you're coding past the declaration of the variable you can remember what type it was originally supposed to be*/
-```
-* just like in Java, all ints are objects of type Integer. _int x, int y_ will automatically **box** itself into _Integer x, Integer y_. An example of **unboxing** is _x + y_ which automatically unboxes the Integer objects into primitive ints
 
-* A String object in Groovy is pretty much the same as in C++ as far as I can tell. Just like you can access a specific char by doing *char c = oldString[x]*, the following code is totally valid
-```java
-String sample = "Hello world"; 
-println(sample[4]); // Print the fifth character in the string
-println(sample[-1]); /*Print the 1st character in the string starting from the back */
-println(sample[1..2]);/*Prints a string starting from Index 1 to 2 (remember that the x..y means it defines a Range from x to y*/
-println(sample[4..2]);/*Prints a string starting from Index 4 back to 2*/
-```
-&nbsp; &nbsp; &nbsp; will print
-```
-o 
-d
-el
-oll
-```
+---
+---
 
-* you can concatonate strings just like in Java
+## Classes:
 
-* Date objects are a thing, just fyi
-```java
-Date currDate = Date() /*Will allocate a date object containing the current type. Can also be printed with millisecond precision*/
-Date oldDate = Date(0) /*will print the epoch date of January 1, 1970, 00:00:00 GMT*/
-Date oldDatePlus = Date()  /*Will print the epoch date plus the milliseconds specified in the constructor of "Thu Jan 01 04:00:00 GST 1970*/
-```
-
-* can use Regex in Groovy with the **~** operator
-```java
-def regex = ~'Groovy' /*base object*/
-//below are just new values
-'Groovy' =~ 'oo' 
-'Groovy' ==~ 'Groovy' 
-'Groovy' ==~ 'oo' 
-'Groovy' =~ '∧G' 
-'Groovy' =~ 'G$' 
-'Groovy' =~ 'Gro*vy' 'Groovy' =~ 'Gro{2}vy'
-```
-
-* can use try/catch blocks
-
-* can use and define objects same as in Java
-
-* although it says otherwise on another website, you can provide getters and setters for a class' data
-
-* can also use the keyword **extends**, same as in Java, for example...
+can also use the keyword **extends**, same as in Java, for example...
 ```java
 class Person {
   //stuff goes here
@@ -280,7 +262,7 @@ class Student extends Person {
 } 
 ```
 
-* can have nested classes
+can have nested classes
 ```java
 class Example
 {
@@ -301,7 +283,7 @@ class Outer
 }
 ```
 
-* can also have abstract classes
+can also have abstract classes
 ```java
 abstract class Person 
 { 
@@ -316,13 +298,36 @@ class Student extends Person
     }
 } 
 ```
-* Groovy has something similar to Java's ArrayList<Type> except it's just List<Type> but is also an ArrayList? I don't get it, really. It has similar methods too.
+---
+---
+
+## Miscellaneous Unsorted Notes:
+Date objects are a thing, just fyi
+```java
+Date currDate = Date() /*Will allocate a date object containing the current type. Can also be printed with millisecond precision*/
+Date oldDate = Date(0) /*will print the epoch date of January 1, 1970, 00:00:00 GMT*/
+Date oldDatePlus = Date()  /*Will print the epoch date plus the milliseconds specified in the constructor of "Thu Jan 01 04:00:00 GST 1970*/
+```
+
+can use Regex in Groovy with the **~** operator
+```java
+def regex = ~'Groovy' /*base object*/
+//below are just new values
+'Groovy' =~ 'oo' 
+'Groovy' ==~ 'Groovy' 
+'Groovy' ==~ 'oo' 
+'Groovy' =~ '∧G' 
+'Groovy' =~ 'G$' 
+'Groovy' =~ 'Gro*vy' 'Groovy' =~ 'Gro{2}vy'
+```
+
+Groovy has something similar to Java's ArrayList<Type> except it's just List<Type> but is also an ArrayList? I don't get it, really. It has similar methods too.
 ```java
 List<String> list = new ArrayList<String>()
 list.add("first");
 list.add("second");
 ```
-* Something I still don't get is Closures and Variables. Like, I get the idea of it, but the idea of it is odd. Like, it works but still.The below is apparently valid code?
+Something I still don't get is Closures and Variables. Like, I get the idea of it, but the idea of it is odd. Like, it works but still.The below is apparently valid code?
 ```groovy
 class Example {     
    static void main(String[] args) 
@@ -337,4 +342,8 @@ class Example {
    } 
 }
 ```
+---
+---
+ 
+
 
