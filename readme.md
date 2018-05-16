@@ -344,6 +344,9 @@ class Example {
 ```
 ---
 ---
+
+## Website For More Notes:
+[Groovy Tutorials](https://www.tutorialspoint.com/groovy/groovy_xml.htm)
  
 
 
