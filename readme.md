@@ -1,6 +1,7 @@
 # Groovy Notes:
 
 ---
+
 ---
 ## General Not-Notes:
 [Sorry about the mess](https://www.sideshowtoy.com/wp-content/uploads/2014/07/hansolo.jpg) the notes will eventually be clean
@@ -8,6 +9,7 @@
 One of my new favorite things is the "Code Runner" extension, it allows it to run on VS Code which is great
 
 ---
+
 ---
 
 ## General:
@@ -61,7 +63,9 @@ println "Hello World"
  public HelloWorld(groovy.lang.Binding);
  public static void main(java.lang.String...);
  ```
+
 ---
+
 ---
 
 ## If/Else Switch
@@ -75,7 +79,9 @@ for( String myObj in myList )
   doTheRest()
 }
 ```
+
 ---
+
 ---
 
 ## Loops:
@@ -123,6 +129,7 @@ while(isTrue)
 }
 ```
 ---
+
 ---
 
 ## GStrings
@@ -168,6 +175,7 @@ oll
 ```
 
 ---
+
 ---
 
 ## File I/O:
@@ -247,6 +255,7 @@ new File("E:/Temp").eachFileRecurse()
 ```
 
 ---
+
 ---
 
 ## Classes:
@@ -299,6 +308,7 @@ class Student extends Person
 } 
 ```
 ---
+
 ---
 
 ## Miscellaneous Unsorted Notes:
@@ -343,6 +353,7 @@ class Example {
 }
 ```
 ---
+
 ---
 
 ## Website For More Notes:
