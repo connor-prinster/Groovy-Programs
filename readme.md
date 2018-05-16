@@ -215,13 +215,13 @@ File? false
 Directory? true
 Directory? false
 ```
-* to copy file
+to copy file
 ```java
 def src = new File("E:/Example.txt")
 def dst = new File("E:/Example1.txt")
 dst << src.text //copies src to dst
 ```
-* to get directory contents
+to get directory contents
 ```java
 def rootFiles = new File("test").listRoots() 
 rootFiles.each { file -> println file.absolutePath }
@@ -231,14 +231,14 @@ will print
 C:\ 
 D:\
 ```
-* to print all the files in a particular directory
+to print all the files in a particular directory
 ```java
 /*apparently automatically checks the .isDirectory() method for us*/
 new File("E:/Temp").eachFile() 
 { file->println file.getAbsolutePath() }
 ```
 
-* to print all the files in a particular directory and it's subdirectories
+ to print all the files in a particular directory and it's subdirectories
 
 ```java
 /*this is starting to look more and more like Java tbh*/
