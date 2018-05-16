@@ -153,7 +153,72 @@ groovyc <file>.groovy
 ```
 * To look at methods and such,
 ```
-javap -private <filename w/o ending>
+javap -private <filename w/out extension>
 ```
 
 * Groovy also automatically handles exceptions bassed on types it's working with. You also don't have to worry about null variables
+
+* the **delete()** method for the File class returns a boolean. For example the below code is valid
+
+```groovy
+File newFile = new File("*.txt")
+if(newFile.delete()) 
+    println("success!")
+```
+* occasionally the delete() method won't work unless you use the **createNewFile()** method. I haven't figured out when it's needed or not, but sometimes I've needed it for the **delete()** to work and other times I haven't. That being said it's not like I've used it all that much so far
+
+* making a directory appears to be just as simple as in a linux shell
+```java
+/*even though it's of class File, it can still be a directory*/
+File file = new File("/Directory")  
+/*just like the linux shell command, easy as blue milk*/
+file.mkdir()
+```
+
+* to test if a file is a directory or a file is pretty simple too
+```java
+File trueFile = new File("trueFile.txt")
+File trueDirectory = new File("/trueDir")
+println("File? ${trueFile.isFile()}")
+println("File? ${trueDirectory}")
+println("Directory? ${trueDirectory.isDirectory()}")
+println("Directory? ${trueFile.isDirectory()}")
+```
+&nbsp; &nbsp; &nbsp;will print
+```
+File? true
+File? false
+Directory? true
+Directory? false
+```
+* to copy file
+```java
+def src = new File("E:/Example.txt")
+def dst = new File("E:/Example1.txt")
+dst << src.text //copies src to dst
+```
+* to get directory contents
+```java
+def rootFiles = new File("test").listRoots() 
+rootFiles.each { file -> println file.absolutePath }
+```
+&nbsp; &nbsp; &nbsp;will print
+```
+C:\ 
+D:\
+```
+* to print all the files in a particular directory
+```java
+/*apparently automatically checks the .isDirectory() method for us*/
+new File("E:/Temp").eachFile() 
+{ file->println file.getAbsolutePath() }
+```
+
+* to print all the files in a particular directory and it's subdirectories
+
+```java
+/*this is starting to look more and more like Java tbh*/
+new File("E:/Temp").eachFileRecurse() 
+{ file->println file.getAbsolutePath() }
+```
+
