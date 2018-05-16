@@ -55,6 +55,7 @@ class Example
 
         //println "\n---Attempting to print to and check size of $fileToWrite---"
         printStringCheckSizeFile(fileToWrite)
+        createAndDeleteFile()
         
         
 (fileToWrite)
@@ -105,10 +106,24 @@ class Example
     {
         new File(fileToWrite).withWriter('utf-8')
         {
-            writer -> writer.writeLine "This string is useless\n"
-            print("\nThe file ($fileToWrite) has ${fileToWrite.length()} bytes\n")
+            writer -> writer.writeLine "This string is useless but it needs to be there for a sec\n"
+            print("\nThe (now deleted) file -$fileToWrite- has ${fileToWrite.length()} bytes\n")
         }
-        
+        File fileToDelete = new File(fileToWrite)
+        fileToDelete.delete()
+    }
+
+    static void createAndDeleteFile()
+    {
+        println("\n---Creating a file---")
+        File newFile = new File("deleteAttempt.txt")
+        println("---Creating File---")
+        newFile.createNewFile()
+        println("---Attempting to Delete the File---")
+        if(newFile.delete())
+        {
+            println("---File Was Successfully Deleted---")
+        }
     }
 
     //main method
