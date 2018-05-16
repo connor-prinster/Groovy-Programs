@@ -221,4 +221,103 @@ new File("E:/Temp").eachFile()
 new File("E:/Temp").eachFileRecurse() 
 { file->println file.getAbsolutePath() }
 ```
+* since Groovy is untyped, if you're going to use **def** make sure to use _duck typing_ as shown below
+```java
+def c = 100.10 /*this could lead to problems since you don't really know what type it is along the line*/
+def cFloat = 100.10 /*This is much better because when you're coding past the declaration of the variable you can remember what type it was originally supposed to be*/
+```
+* just like in Java, all ints are objects of type Integer. _int x, int y_ will automatically **box** itself into _Integer x, Integer y_. An example of **unboxing** is _x + y_ which automatically unboxes the Integer objects into primitive ints
+
+* A String object in Groovy is pretty much the same as in C++ as far as I can tell. Just like you can access a specific char by doing *char c = oldString[x]*, the following code is totally valid
+```java
+String sample = "Hello world"; 
+println(sample[4]); // Print the fifth character in the string
+println(sample[-1]); /*Print the 1st character in the string starting from the back */
+println(sample[1..2]);/*Prints a string starting from Index 1 to 2 (remember that the x..y means it defines a Range from x to y*/
+println(sample[4..2]);/*Prints a string starting from Index 4 back to 2*/
+```
+&nbsp; &nbsp; &nbsp;will print
+```
+o 
+d
+el
+oll
+```
+
+* you can concatonate strings just like in Java
+
+* Date objects are a thing, just fyi
+```java
+Date currDate = Date() /*Will allocate a date object containing the current type. Can also be printed with millisecond precision*/
+Date oldDate = Date(0) /*will print the epoch date of January 1, 1970, 00:00:00 GMT*/
+Date oldDatePlus = Date()  /*Will print the epoch date plus the milliseconds specified in the constructor of "Thu Jan 01 04:00:00 GST 1970*/
+```
+
+* can use Regex in Groovy with the **~** operator
+```java
+def regex = ~'Groovy' /*base object*/
+//below are just new values
+'Groovy' =~ 'oo' 
+'Groovy' ==~ 'Groovy' 
+'Groovy' ==~ 'oo' 
+'Groovy' =~ '∧G' 
+'Groovy' =~ 'G$' 
+'Groovy' =~ 'Gro*vy' 'Groovy' =~ 'Gro{2}vy'
+```
+
+* can use try/catch blocks
+
+* can use and define objects same as in Java
+
+* although it says otherwise on another website, you can provide getters and setters for a class' data
+
+* can also use the keyword **extends**, same as in Java, for example...
+```java
+class Person {
+  //stuff goes here
+} 
+
+class Student extends Person {
+  //stuff goes here
+} 
+```
+
+* can have nested classes
+```java
+class Example
+{
+    Outer out = new Outer()
+    out.callInnerMethod() //is valid
+}
+class Outer
+{
+    //stuff
+    def callInnerMethod()
+    {
+      new Inner().innerMethod();
+    }
+  class Inner
+    {
+      def innerMethod()
+    }
+}
+```
+
+* can also have abstract classes
+```java
+abstract class Person 
+{ 
+    abstract void DisplayMarks();
+}
+ 
+class Student extends Person 
+{ 
+    void DisplayMarks()
+    {
+        println("here!")
+    }
+} 
+```
+
+
 
