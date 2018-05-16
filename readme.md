@@ -3,6 +3,8 @@
 ---
 
 ---
+
+---
 ## General Not-Notes:
 [Sorry about the mess](https://www.sideshowtoy.com/wp-content/uploads/2014/07/hansolo.jpg) the notes will eventually be clean
 
@@ -11,6 +13,7 @@ One of my new favorite things is the "Code Runner" extension, it allows it to ru
 ---
 
 ---
+
 
 ## General:
  * methods are the same in Groovy as in Java, can take 0 or infinity amount of parameters
