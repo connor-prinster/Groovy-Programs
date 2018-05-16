@@ -53,8 +53,7 @@ class Example
         printFromFileLineByLine(darthPlagueisText)
         printFileAsString(darthPlagueisText)
 
-        println "\n---Attempting to print to and check size of $fileToWrite---"
-        
+        //println "\n---Attempting to print to and check size of $fileToWrite---"
         printStringCheckSizeFile(fileToWrite)
         
         
@@ -104,11 +103,12 @@ class Example
 
     static void printStringCheckSizeFile(String fileToWrite)
     {
-        File file = new File(fileToWrite).withWriter('utf-8')
+        new File(fileToWrite).withWriter('utf-8')
         {
             writer -> writer.writeLine "This string is useless\n"
+            print("\nThe file ($fileToWrite) has ${fileToWrite.length()} bytes\n")
         }
-        println "The file $fileToWrite has ${fileToWrite.length()} bytes\n"
+        
     }
 
     //main method
