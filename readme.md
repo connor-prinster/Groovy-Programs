@@ -208,7 +208,7 @@ println("File? ${trueDirectory}")
 println("Directory? ${trueDirectory.isDirectory()}")
 println("Directory? ${trueFile.isDirectory()}")
 ```
-&nbsp; &nbsp; &nbsp;will print
+will print
 ```
 File? true
 File? false
