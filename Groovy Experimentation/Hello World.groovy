@@ -1,5 +1,11 @@
 class Example
 {
+    //main method
+    static void main(String[] args)
+    {
+        simpleMethod()
+    }
+
     static void simpleMethod()
     {
         def darthPlagueisText = "Groovy Experimentation\\darthPlagueis.txt"
@@ -125,11 +131,5 @@ class Example
         {
             println("---File Was Successfully Deleted---")
         }
-    }
-
-    //main method
-    static void main(String[] args)
-    {
-        simpleMethod()
     }
 }
