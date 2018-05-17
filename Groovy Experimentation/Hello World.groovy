@@ -117,8 +117,9 @@ class Example
     {
         println("\n---Creating a file---")
         File newFile = new File("deleteAttempt.txt")
-        println("---Creating File---")
+        println("---Creating File With Pause for Dramatic Effect---")
         newFile.createNewFile()
+        sleep(2000)
         println("---Attempting to Delete the File---")
         if(newFile.delete())
         {
