@@ -8,7 +8,7 @@
 ## General Not-Notes:
 [Sorry about the mess](https://www.sideshowtoy.com/wp-content/uploads/2014/07/hansolo.jpg) the notes will eventually be clean
 
-One of my new favorite things is the "Code Runner" extension which allows it to run on VS Code which is great
+One of my new favorite things is the "Code Runner" extension which allows Groovy and other languages to run on VS Code
 
 ---
 
