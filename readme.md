@@ -355,6 +355,12 @@ class Example {
    } 
 }
 ```
+
+To make a Groovy string into a Java string, use triple quotes like shown below:
+```java
+'''a triple single quoted string'''
+```
+
 ---
 
 ---
